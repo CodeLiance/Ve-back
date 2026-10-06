@@ -26,11 +26,10 @@ export default () => ({
     apiKey: process.env.RESEND_API_KEY,
   },
   auth: {
-    // 2FA por correo en login/registro. Se puede desactivar en desarrollo
-    // (AUTH_2FA_ENABLED=false) para no depender del envío de correo; la
-    // lógica de OTP queda intacta y se reactiva quitando la variable o
-    // poniéndola en true. Nunca se desactiva si NODE_ENV=production.
-    twoFactorEnabled:
-      process.env.NODE_ENV === 'production' || process.env.AUTH_2FA_ENABLED !== 'false',
+    // 2FA por correo en login/registro. Se desactiva con AUTH_2FA_ENABLED=false
+    // (también en producción, mientras no haya envío de correo configurado);
+    // la lógica de OTP queda intacta y se reactiva quitando la variable o
+    // poniéndola en true.
+    twoFactorEnabled: process.env.AUTH_2FA_ENABLED !== 'false',
   },
 });

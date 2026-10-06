@@ -311,4 +311,4 @@ npm run test:cov
 
 ## License
 
-MIT
+Propietario © 2026 CodeLiance. Todos los derechos reservados. Ver [LICENSE](LICENSE).

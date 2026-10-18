@@ -21,11 +21,13 @@ const BG_PAGE = "#F5F5F5"
 export function passwordResetEmail(params: { code: string; userName: string }): {
   subject: string
   html: string
+  text: string
 } {
   const { code, userName } = params
 
   return {
     subject: "Recuperación de contraseña",
+    text: `Hola ${userName}, usa este código para restablecer tu contraseña de Ve!: ${code}\n\nSi no pediste este cambio, ignora este correo.`,
     html: `<!doctype html>
 <html lang="es">
   <head>
